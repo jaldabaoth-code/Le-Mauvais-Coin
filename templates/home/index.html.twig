@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ parent() }} - Accueil{% endblock %}
+{% block body %}
+	<header class="container-fluid p-5 text-center">
+		<h1>Le Mauvais coin</h1>
+		<p>Faites de mauvaises affaires avec des personnes peu recommandables</p>
+	</header>
+	<main class="container">
+		<section class="mt-5">
+			<h2>Déposer une offre</h2>
+			<p class="d-flex flex-column align-items-center mt-4">
+				Vous souhaitez arnaquez un pigeon avec un produit de mauvaise qualité ?<br/>
+				N’hésitez plus et déposer une annonce pour très cher avec peu de visibilité !
+                <a href="{{ path('offer_add') }}" class="mt-5 btn btn-lg btn-primary">Déposer une offre</a>
+			</p>
+		</section>
+	</main>
+{% endblock %}

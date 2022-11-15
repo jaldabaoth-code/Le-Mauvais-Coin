@@ -1,0 +1,31 @@
+@import 'variables.scss';
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Underdog&display=swap');
+@import 'navbar.scss';
+
+body {
+    background-color: $light;
+    color: $light;
+    font-family: $text-font;
+    font-size: 16pt;
+    padding-top:60px;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    font-weight: lighter;
+}
+
+h1, h2, h3 {
+    font-family: $title-font;
+    color: $secondary;
+}
+
+
+header {
+    background-color: transparentize($dark, 0.8);
+    font-size: 24pt;
+    color: $light;
+}
+
+a {
+    text-decoration: none;
+}
