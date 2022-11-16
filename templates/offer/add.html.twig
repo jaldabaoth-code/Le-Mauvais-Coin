@@ -5,18 +5,18 @@
 	{{ encore_entry_link_tags('offer') }}
 {% endblock %}
 {% block title %}
-	{{ parent() }} Déposer une offre
+	{{ parent() }} Submit an offer
 {% endblock %}
 {% block body %}
 	<main class="container">
-		<h1>Déposer une offre</h1>
+		<h1>Submit an offer</h1>
 		{{ form_start(form) }}
 			{{ form_row(form.title) }}
 			{{ form_row(form.category) }}
 			{{ form_row(form.price) }}
 			{{ form_row(form.imageFile) }}
 			{{ form_row(form.description) }}
-			<button class="btn btn-lg btn-primary col-12 mt-3" type="submit">Déposer mon offer</button>
+			<button class="btn btn-lg btn-primary col-12 mt-3" type="submit">Submit my offer</button>
 		{{ form_end(form) }}
 	</main>
 {% endblock %}

@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/category")
+ * @Route("/admin/category", name="admin_category_")
  */
 class AdminCategoryController extends AbstractController
 {
     /**
-     * @Route("/", name="admin_category_index", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(CategoryRepository $categoryRepository): Response
     {
@@ -26,23 +26,20 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="admin_category_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
         $category = new Category();
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
-            $this->addFlash('success', 'La catégorie a bien été crée');
-
+            $this->addFlash('success', 'The category has been created');
             return $this->redirectToRoute('admin_category_index');
         }
-
         return $this->render('admin_category/new.html.twig', [
             'category' => $category,
             'form' => $form->createView(),
@@ -50,7 +47,7 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_category_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show(Category $category): Response
     {
@@ -60,20 +57,17 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="admin_category_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Category $category): Response
     {
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', 'La catégorie a bien été modifiée');
-
+            $this->addFlash('success', 'The category has been successfully modified');
             return $this->redirectToRoute('admin_category_index');
         }
-
         return $this->render('admin_category/edit.html.twig', [
             'category' => $category,
             'form' => $form->createView(),
@@ -81,7 +75,7 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_category_delete", methods={"POST"})
+     * @Route("/{id}", name="delete", methods={"POST"})
      */
     public function delete(Request $request, Category $category): Response
     {
@@ -89,9 +83,8 @@ class AdminCategoryController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($category);
             $entityManager->flush();
-            $this->addFlash('success', 'La catégorie a bien été supprimée');
+            $this->addFlash('success', 'The category has been successfully deleted');
         }
-
         return $this->redirectToRoute('admin_category_index');
     }
 }

@@ -13,7 +13,7 @@
 		{% if is_granted("ROLE_USER") %}
 			<a class="buttonAddOffer btn btn-success mb-5" href="{{ path("offer_add") }}">Add new offer</a>
 		{% endif %}
-		<h1>Ma recherche</h1>
+		<h1>My research</h1>
 		{{ form_start(form) }}
 			{{ form_widget(form) }}
 			<button class="btn btn-lg btn-primary col-12 mt-3" type="submit">Search</button>
@@ -34,7 +34,7 @@
 					</a>
 				</div>
 			{% else %}
-				Pas de résultat à la recherche
+				No search result
 			{% endfor %}
 		</div>
 	</main>

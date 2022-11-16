@@ -27,11 +27,9 @@ class OfferController extends AbstractController
         $searchOffer = new SearchOffer();
         $form = $this->createForm(SearchOfferType::class, $searchOffer);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $offers = $offerRepository->findBySearch($searchOffer);
         }
-
         return $this->render('offer/index.html.twig', [
             'offers' => $offers ?? $offerRepository->findAll(),
             'form' => $form->createView(),
@@ -45,20 +43,16 @@ class OfferController extends AbstractController
     public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
         $offer = new Offer();
-
         $form = $this->createForm(OfferType::class, $offer);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            // insertion en bdd
+            // Insertion en bdd
             $entityManager->persist($offer);
             $entityManager->flush();
-
-            $this->addFlash('success', 'L\'offre a bien été crée');
-            // redirection
+            $this->addFlash('success', 'The offer has been created');
+            // Redirection
             return $this->redirectToRoute('home');
         }
-
         return $this->render('offer/add.html.twig', [
             'form' => $form->createView(),
         ]);

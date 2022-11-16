@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ path('home') }}">
             <img class="logo" src="{{ asset('build/images/logo.png') }}" alt="logo">
-            Le mauvais coin
+            The wrong corner
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,16 +12,16 @@
             	{% if is_granted("ROLE_USER") %}
                     <a class="nav-link" href="{{ path("admin_category_index") }}">Categories</a>
                 {% endif %}
-                <a class="nav-link" href="{{ path('offer_list') }}">Mes offres</a>
+                <a class="nav-link" href="{{ path('offer_list') }}">My offers</a>
                 <a class="nav-link" href="#">Messages</a>
-                <a class="nav-link" href="#">Favoris</a>
-                <a class="nav-link" href="#">Mon profil</a>
+                <a class="nav-link" href="#">Favorites</a>
+                <a class="nav-link" href="#">My profile</a>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a class="nav-link fw-bold" href="#">Bienvenue {{ app.user.firstname }} !</a>
-                    <a class="nav-link btn btn-danger" href="{{ path('app_logout') }}">Deconnexion</a>
+                    <a class="nav-link fw-bold" href="#">Welcome {{ app.user.firstname }} !</a>
+                    <a class="nav-link btn btn-danger" href="{{ path('app_logout') }}">Logout</a>
                 {% else %}
-                    <a class="nav-link btn btn-success mx-2" href="{{ path('app_login') }}">Se connecter</a>
-                    <a class="nav-link btn btn-secondary" href="{{ path('app_register') }}">S'inscrire</a>
+                    <a class="nav-link btn btn-success mx-2" href="{{ path('app_login') }}">Login</a>
+                    <a class="nav-link btn btn-secondary" href="{{ path('app_register') }}">Register</a>
                 {% endif %}
             </div>
         </div>
