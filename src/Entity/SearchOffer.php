@@ -7,12 +7,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 class SearchOffer
 {
     private ?string $title = '';
-
     private ?Category $category = null;
-
     private ?float $minPrice = null;
     private ?float $maxPrice = null;
-
     private ?string $sortByPrice = null;
 
     /**

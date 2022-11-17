@@ -19,7 +19,7 @@ class SearchOfferType extends AbstractType
         $builder
             ->setMethod('GET')
             ->add('title', SearchType::class, [
-                'required' => false,
+                'required' => false
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
@@ -28,14 +28,14 @@ class SearchOfferType extends AbstractType
                     return $er->createQueryBuilder('c')
                         ->orderBy('c.name', 'ASC');
                 },
-                'required' => false,
+                'required' => false
             ])
             ->add('minPrice')
             ->add('maxPrice')
             ->add('sortByPrice', ChoiceType::class, [
                 'choices' => [
                     'Croissant' => 'ASC',
-                    'Décroissant' => 'DESC',
+                    'Décroissant' => 'DESC'
                 ]
             ]);
     }
@@ -43,7 +43,7 @@ class SearchOfferType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => SearchOffer::class,
+            'data_class' => SearchOffer::class
         ]);
     }
 }

@@ -46,7 +46,7 @@ class OfferController extends AbstractController
         $form = $this->createForm(OfferType::class, $offer);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // Insertion en bdd
+            // Insertion in database
             $entityManager->persist($offer);
             $entityManager->flush();
             $this->addFlash('success', 'The offer has been created');

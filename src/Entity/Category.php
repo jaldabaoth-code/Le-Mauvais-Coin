@@ -50,7 +50,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -68,19 +67,17 @@ class Category
             $this->offers[] = $offer;
             $offer->setCategory($this);
         }
-
         return $this;
     }
 
     public function removeOffer(Offer $offer): self
     {
         if ($this->offers->removeElement($offer)) {
-            // set the owning side to null (unless already changed)
+            // Set the owning side to null (unless already changed)
             if ($offer->getCategory() === $this) {
                 $offer->setCategory(null);
             }
         }
-
         return $this;
     }
 }

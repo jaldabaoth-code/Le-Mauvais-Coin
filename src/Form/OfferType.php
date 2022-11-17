@@ -24,21 +24,21 @@ class OfferType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre',
                 'attr' => [
-                    'placeholder' => 'Clous rouillés',
+                    'placeholder' => 'Rusty nails'
                 ]
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'name',
+                'choice_label' => 'name'
             ])
             ->add('description', TextareaType::class)
             ->add('price', MoneyType::class, [
-                'label' => 'Prix',
-                'help' => 'Uniquement en euros'
+                'label' => 'Price',
+                'help' => 'Only in euros'
             ])
             ->add('imageFile', VichImageType::class, [
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control'
                 ],
                 'label_attr' => [
                     'class' => 'form-label'
@@ -49,7 +49,7 @@ class OfferType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Offer::class,
+            'data_class' => Offer::class
         ]);
     }
 }

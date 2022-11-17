@@ -34,10 +34,7 @@ class Offer
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * @Vich\UploadableField(mapping="offers", fileNameProperty="imageName")
-     * @Assert\File(
-     *     maxSize = "2M",
-     *     mimeTypes = {"image/jpeg", "image/png", "image/webp"},
-     * )
+     * @Assert\File(maxSize = "2M", mimeTypes = {"image/jpeg", "image/png", "image/webp"})
      * @var File|null
      */
     private $imageFile;
@@ -89,7 +86,6 @@ class Offer
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -101,7 +97,6 @@ class Offer
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
-
         return $this;
     }
 
@@ -113,7 +108,6 @@ class Offer
     public function setDescription(?string $description): self
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -125,7 +119,6 @@ class Offer
     public function setPrice(float $price): self
     {
         $this->price = $price;
-
         return $this;
     }
 
@@ -137,14 +130,12 @@ class Offer
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
-
         return $this;
     }
 
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
-
         if (null !== $imageFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost

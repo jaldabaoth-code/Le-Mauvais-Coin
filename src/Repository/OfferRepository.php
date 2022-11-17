@@ -38,7 +38,6 @@ class OfferRepository extends ServiceEntityRepository
                 ->setParameter('maxPrice', $searchOffer->getMaxPrice());
         }
         $qb->orderBy('o.price', $searchOffer->getSortByPrice());
-
         return $qb->getQuery()
             ->getResult();
     }
