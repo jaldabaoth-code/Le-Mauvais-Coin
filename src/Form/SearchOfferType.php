@@ -34,8 +34,8 @@ class SearchOfferType extends AbstractType
             ->add('maxPrice')
             ->add('sortByPrice', ChoiceType::class, [
                 'choices' => [
-                    'Croissant' => 'ASC',
-                    'Décroissant' => 'DESC'
+                    'Increasing' => 'ASC',
+                    'Descending' => 'DESC'
                 ]
             ]);
     }

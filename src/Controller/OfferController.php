@@ -32,7 +32,7 @@ class OfferController extends AbstractController
         }
         return $this->render('offer/index.html.twig', [
             'offers' => $offers ?? $offerRepository->findAll(),
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 
@@ -54,7 +54,7 @@ class OfferController extends AbstractController
             return $this->redirectToRoute('home');
         }
         return $this->render('offer/add.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 
@@ -64,7 +64,7 @@ class OfferController extends AbstractController
     public function show(Offer $offer): Response
     {
         return $this->render('offer/show.html.twig', [
-            'offer' => $offer,
+            'offer' => $offer
         ]);
     }
 }
