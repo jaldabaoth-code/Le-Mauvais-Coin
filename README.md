@@ -19,7 +19,6 @@
 11. Run `symfony server:start` to launch symfony server
 12. Go to <b>localhost:8000</b> with your favorite browser
 
-
 ### Users
 
 Admin User<br/>
