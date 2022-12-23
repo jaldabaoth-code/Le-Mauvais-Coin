@@ -1,6 +1,6 @@
-<h1>Le Mauvais Coin (Symfony Quests, WCS Web PHP)</h1>
+<h1>Le Mauvais Coin (Symfony Livecoding, WCS Web PHP)</h1>
 
-### There are "Symfony Quests" we did during WCS Web PHP
+### Create a website with "Symfony" by WCS trainer during a livecoding
 
 ---
 
@@ -23,19 +23,15 @@
 ### Users
 
 Admin User<br/>
-login: <br/>
-password: 
-
-Contributor User<br/>
-login: <br/>
-password: 
+login: frodo@baggins.com<br/>
+password: sauron
 
 Demo User<br/>
-login: <br/>
-password: 
+login: bilbo@baggins.com<br/>
+password: baggins
 
 ---
 
 ## The Links
 
-
+<a href="https://github.com/WildCodeSchool/orleans-202103-php-livecoding-mauvaiscoin">Link to the repository of project where the trainer worked during <b>Le Mauvais Coin - Symfony Livecoding</b></a>

@@ -39,7 +39,7 @@ class UserFixtures extends Fixture
             $user->setEmail($faker->email());
             $user->setFirstname($faker->firstName());
             $user->setLastname($faker->lastName());
-            $user->setPassword($this->passwordEncoder->encodePassword($user, 'toto'));
+            $user->setPassword($this->passwordEncoder->encodePassword($user, 'password'));
             $manager->persist($user);
         }
         $manager->flush();
